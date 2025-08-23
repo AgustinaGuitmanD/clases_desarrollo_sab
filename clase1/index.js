@@ -17,13 +17,24 @@ const { aumentarPrecioDiario,
 const alojamiento1 = new Alojamiento(
     "Hotel en Bs As", 
     100, 
-    Categoria.Hotel);
+    Categoria.Hotel,
+    [wifi, pileta]);
 
 //console.log(alojamiento1.getDescripcion());
 
 const reserva1 = new Reserva(alojamiento1, 
                             new Date("2025-05-10"),
-                            new Date("2025-05-20"));
+                            new Date("2025-05-20")
+                        );
+
+const reserva2 = new Reserva(alojamiento1,
+    new Date("2025-05-21"),
+    new Date("2025-05-30"),
+    );
+const reserva3 = new Reserva(alojamiento1,
+    new Date("2025-05-15"),
+    new Date("2025-05-18")
+    );
 
 reserva1.agregarDescuento(new DescuentoFijo(100));
 reserva1.agregarDescuento(new DescuentoPorcentaje(10));
